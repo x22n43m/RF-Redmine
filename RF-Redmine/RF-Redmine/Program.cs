@@ -1,3 +1,4 @@
+using RF_Redmine.Classes;
 
 namespace RF_Redmine
 {
@@ -5,6 +6,8 @@ namespace RF_Redmine
     {
         public static void Main(string[] args)
         {
+            db.kapcsol("Data Source=redmine.db");
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -24,7 +27,6 @@ namespace RF_Redmine
             }
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
