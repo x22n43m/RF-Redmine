@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bejelentkezés</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .login-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
+</style>
+</head>
+<body>
+
+<div class="login-container">
+  <h2>Bejelentkezés</h2>
+  <form id="loginForm">
+    <label for="uname"><b>Felhasználónév</b></label>
+    <input type="text" placeholder="Írd be a felhasználóneved" name="uname" required>
+
+    <label for="psw"><b>Jelszó</b></label>
+    <input type="password" placeholder="Írd be a jelszavad" name="psw" required>
+
+    <button type="submit">Bejelentkezés</button>
+  </form>
+</div>
+
+<script>
+document.getElementById('loginForm').onsubmit = function(event) {
+  event.preventDefault(); // Megakadályozzuk az űrlap alapértelmezett beküldését
+  
+  var username = document.getElementsByName('uname')[0].value;
+  var password = document.getElementsByName('psw')[0].value;
+  
+  console.log('Felhasználónév: ' + username);
+  console.log('Jelszó: ' + password);
+
+  // Itt hajthatjuk végre a további műveleteket, például az adatokat elküldhetjük egy szervernek, vagy kezelhetjük a helyi validációt
+};
+</script>
+
+</body>
+</html>
