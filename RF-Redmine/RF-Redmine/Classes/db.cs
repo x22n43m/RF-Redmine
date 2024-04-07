@@ -6,20 +6,13 @@ using System.Reflection;
 
 namespace RF_Redmine.Classes
 {
-    public class db : ControllerBase
+    public class db
     {
         public static SQLiteCommand parancs;
         public static SQLiteCommand parancs2;
         public static SQLiteConnection kapcsolat;
         public static SQLiteDataReader eredmeny;
         public static SQLiteDataReader eredmeny2;
-
-        private static ILogger<db> _logger;
-
-        public db(ILogger<db> logger)
-        {
-            _logger = logger;
-        }
 
         public static void kapcsolodik()
         {
@@ -38,23 +31,23 @@ namespace RF_Redmine.Classes
 
         static void loadTablesNames()
         {
-            db.parancs.CommandText = "select count(*) from sqlite_master where type='table' and name != 'sqlite_sequence'";
-            int tableamount = Convert.ToInt32(db.parancs.ExecuteScalar());
+            parancs.CommandText = "select count(*) from sqlite_master where type='table' and name != 'sqlite_sequence'";
+            int tableamount = Convert.ToInt32(parancs.ExecuteScalar());
             string[] tablenames = new string[tableamount];
-            db.parancs.CommandText = "select name from sqlite_master where type='table' and name != 'sqlite_sequence'";
-            db.eredmeny = db.parancs.ExecuteReader();
+            parancs.CommandText = "select name from sqlite_master where type='table' and name != 'sqlite_sequence'";
+            eredmeny = parancs.ExecuteReader();
             int i = 0;
-            while (db.eredmeny.Read())
+            while (eredmeny.Read())
             {
-                tablenames[i] = db.eredmeny[0] + "";
+                tablenames[i] = eredmeny[0] + "";
                 i++;
             }
-            db.eredmeny.Close();
+            eredmeny.Close();
             foreach (string tn in tablenames)
             {
-                db.parancs.CommandText = "select * from " + tn;
-                db.eredmeny = db.parancs.ExecuteReader();
-                while (db.eredmeny.Read())
+                parancs.CommandText = "select * from " + tn;
+                eredmeny = parancs.ExecuteReader();
+                while (eredmeny.Read())
                 {
                     ClassRouter(tn);
                 }

@@ -13,9 +13,9 @@ namespace RF_Redmine.Controllers
     public class LoginController : ControllerBase
     {
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<LoginController> _logger;
 
-        public LoginController(ILogger<WeatherForecastController> logger)
+        public LoginController(ILogger<LoginController> logger)
         {
             _logger = logger;
         }
@@ -23,9 +23,12 @@ namespace RF_Redmine.Controllers
         public IActionResult Login()
         {
             Login LoginAttempt = new Login(Request.Form);
-            return LoginAttempt.LoginState == Enums.ELoginState.Valid_Credentials ? Ok(new { Message = "valid" }) : Ok(new { Message = "bruh" });
+            //return LoginAttempt.LoginState == Enums.ELoginState.Valid_Credentials ? Ok(new { Message = "valid" }) : Ok(new { Message = "bruh" });
+            if (LoginAttempt.LoginState == Enums.ELoginState.Valid_Credentials)
+            {
+                return Redirect("/projects.html");
+            }
+            return NotFound();
         }
-
-        //public ContentResult 
     }
 }

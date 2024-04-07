@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RF-Redmine Projects</title>
+    <style>
+        /* CSS styles (unchanged from previous example) */
+        #header {
+            text-align: left;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px 0;
+        }
+
+        .line {
+            border-bottom: 1px solid black;
+            margin-bottom: 20px;
+        }
+
+        #filterContainer {
+            margin-bottom: 20px;
+        }
+
+        #filterButton {
+            margin-left: 10px;
+        }
+
+        #projectList {
+            list-style-type: none;
+            padding: 10;
+            margin: 10;
+        }
+
+        .projectItem {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header">RF-Redmine</div>
+
+    <!-- Line -->
+    <div class="line"></div>
+
+    <!-- Filter Container -->
+    <div id="filterContainer">
+        <!-- Filter DropDownList -->
+        <label for="projectFilter">Filter Projects:</label>
+        <select id="projectFilter">
+            <option value="1">Project 1</option>
+            <option value="2">Project 2</option>
+            <option value="3">Project 3</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <!-- Filter Button -->
+        <button id="filterButton">Filter</button>
+    </div>
+    <div id="Project_List">
+        
+    </div>
+</body>
+</html>

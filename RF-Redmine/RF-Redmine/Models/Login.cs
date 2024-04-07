@@ -35,13 +35,21 @@ namespace RF_Redmine.Models
             {
                 if (a is Managers) managerek.Add((Managers)a);
             }
-            Managers m = managerek.Where(a => a.GetName == username).ToArray()[0];
-            if (m is not null)
+            Managers m;
+            try
+            {
+                m = managerek.Where(a => a.GetName == username).ToArray()[0];
+            }
+            catch (Exception e)
+            {
+                return ELoginState.Non_Existent_Credentials;
+            }
+            if (m.GetPassword == password)
             {
                 return ELoginState.Valid_Credentials;
             }
             return ELoginState.Invalid_Credentials;
-
         }
+        
     }
 }

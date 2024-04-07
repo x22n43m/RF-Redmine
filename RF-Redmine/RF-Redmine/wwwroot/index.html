@@ -47,6 +47,12 @@
   button:hover {
     opacity: 0.8;
   }
+
+  .response{
+      padding-top: 12px;
+      padding-bottom: 12px;
+  }
+
 </style>
 </head>
 <body>
@@ -60,7 +66,8 @@
     <label for="psw"><b>Jelszó</b></label>
     <input type="password" placeholder="*************" name="psw" required>
 
-    <button type="submit">Bejelentkezésa</button>
+    <button type="submit">Bejelentkezés</button>
+    <div id="response"></div>
   </form>
 </div>
 
@@ -83,7 +90,10 @@ document.getElementById('loginForm').onsubmit = function(event) {
     })
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                var resp = document.getElementById('response')
+                resp.textContent = "Invalid Credentials"
+            } else if (response.redirected) {
+                window.location.href = response.url;
             }
             return response.json();
         })
