@@ -4,13 +4,23 @@ namespace RF_Redmine.Classes.Db_Classes
 {
     public class Project_types : Redmine_DB_Parent
     {
-        int id { get; set; }
-        string name { get; set; }
+        int _id;
+        string _name;
+
+        public int Id
+        {
+            get { return _id; }
+        }
+
+        public string Name
+        {
+            get { return _name; }
+        }
 
         public Project_types(SQLiteDataReader data)
         {
-            this.id = Convert.ToInt32(data[0]);
-            this.name = data[1].ToString()+"";
+            this._id = Convert.ToInt32(data[0]);
+            this._name = data[1].ToString()+"";
         }
     }
 }

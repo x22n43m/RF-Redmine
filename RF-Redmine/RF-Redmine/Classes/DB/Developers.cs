@@ -1,4 +1,5 @@
 ﻿using System.Data.SQLite;
+using System.Text.Json.Serialization;
 
 namespace RF_Redmine.Classes.Db_Classes
 {

@@ -3,22 +3,19 @@ using RF_Redmine.Enums;
 using RF_Redmine.Classes;
 using System;
 using System.ComponentModel.DataAnnotations;
+using RF_Redmine.Classes.Interfaces;
 
 namespace RF_Redmine.Models
 {
-    public class Login
+    public class Login //: IJsonable
     {
         [Required]
         string username { get; set; }
         [Required]
         string password { get; set; }
+        
 
         public ELoginState LoginState;
-
-        public override string ToString()
-        {
-            return username + " - " + password;
-        }
 
         public Login(IFormCollection credentials)
         {
@@ -50,6 +47,5 @@ namespace RF_Redmine.Models
             }
             return ELoginState.Invalid_Credentials;
         }
-        
     }
 }

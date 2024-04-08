@@ -23,7 +23,6 @@ namespace RF_Redmine.Controllers
         public IActionResult Login()
         {
             Login LoginAttempt = new Login(Request.Form);
-            //return LoginAttempt.LoginState == Enums.ELoginState.Valid_Credentials ? Ok(new { Message = "valid" }) : Ok(new { Message = "bruh" });
             if (LoginAttempt.LoginState == Enums.ELoginState.Valid_Credentials)
             {
                 return Redirect("/projects.html");

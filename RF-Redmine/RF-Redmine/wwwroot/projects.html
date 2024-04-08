@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RF-Redmine Projects</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('/Projects', {
+                method: 'GET'
+            })
+                .then(response => response.json())
+                .then(data => {
+                        console.log(data);
+                })
+                .catch (error => {
+                console.error('Error fetching data:', error);
+            });
+        });
+        
+    </script>
     <style>
         /* CSS styles (unchanged from previous example) */
         #header {
@@ -28,8 +43,8 @@
 
         #projectList {
             list-style-type: none;
-            padding: 10;
-            margin: 10;
+            padding: 10px;
+            margin: 10px;
         }
 
         .projectItem {
@@ -51,17 +66,25 @@
         <!-- Filter DropDownList -->
         <label for="projectFilter">Filter Projects:</label>
         <select id="projectFilter">
+            <!-- option examples
             <option value="1">Project 1</option>
             <option value="2">Project 2</option>
             <option value="3">Project 3</option>
-            <!-- Add more options as needed -->
+            -->
         </select>
 
         <!-- Filter Button -->
         <button id="filterButton">Filter</button>
     </div>
-    <div id="Project_List">
+    <div>
         
+    </div>
+    <div id="Project_List">
+        <ul id="projectList">
+            <li class="projectItem">3</li>
+            <li class="projectItem">2</li>
+            <li class="projectItem">1</li>
+        </ul>
     </div>
 </body>
 </html>

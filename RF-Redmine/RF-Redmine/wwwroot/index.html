@@ -67,7 +67,7 @@
     <input type="password" placeholder="*************" name="psw" required>
 
     <button type="submit">Bejelentkezés</button>
-    <div id="response"></div>
+    <div id="feedback"></div>
   </form>
 </div>
 
@@ -82,28 +82,17 @@ document.getElementById('loginForm').onsubmit = function(event) {
     var formData = new FormData();
     formData.append('username', username);
     formData.append('password', password);
-    console.log(formData.get('username'));
-    console.log(formData.get('password'));
     fetch('login', {
         method: 'POST',
         body: formData
     })
         .then(response => {
             if (!response.ok) {
-                var resp = document.getElementById('response')
-                resp.textContent = "Invalid Credentials"
+                var resp = document.getElementById('feedback');
+                resp.textContent = "Invalid Credentials";
             } else if (response.redirected) {
                 window.location.href = response.url;
             }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Response from ASP.NET API:', data);
-            // Handle response data as needed
-        })
-        .catch(error => {
-            console.error('Error sending data to ASP.NET API:', error);
-            // Handle errors
         });
 };
 </script>

@@ -13,7 +13,7 @@ namespace RF_Redmine.Classes
         public static SQLiteConnection kapcsolat;
         public static SQLiteDataReader eredmeny;
         public static SQLiteDataReader eredmeny2;
-
+        
         public static void kapcsolodik()
         {
             string dbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Database\\redmine.db");
