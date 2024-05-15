@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Ricsi\\source\\repos\\Redmine2\\Redmine\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Ricsi\\source\\repos\\Redmine2\\Redmine\\wwwroot\\projects.html",
+      "PackagePath": "staticwebassets\\projects.html"
+    },
+    {
+      "Id": "C:\\Users\\Ricsi\\source\\repos\\Redmine2\\Redmine\\wwwroot\\styles.css",
+      "PackagePath": "staticwebassets\\styles.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Redmine.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Redmine.props",
+      "PackagePath": "build\\Redmine.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Redmine.props",
+      "PackagePath": "buildMultiTargeting\\Redmine.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Redmine.props",
+      "PackagePath": "buildTransitive\\Redmine.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

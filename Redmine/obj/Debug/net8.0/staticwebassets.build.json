@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "fN5imJljmYlHpgGo1GQ6Rq91X/mb0DK14jy4oDv/hdw=",
+  "Source": "Redmine",
+  "BasePath": "_content/Redmine",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Redmine\\wwwroot",
+      "Source": "Redmine",
+      "ContentRoot": "C:\\Users\\Ricsi\\source\\repos\\Redmine2\\Redmine\\wwwroot\\",
+      "BasePath": "_content/Redmine",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Ricsi\\source\\repos\\Redmine2\\Redmine\\wwwroot\\index.html",
+      "SourceId": "Redmine",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ricsi\\source\\repos\\Redmine2\\Redmine\\wwwroot\\",
+      "BasePath": "_content/Redmine",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\Ricsi\\source\\repos\\Redmine2\\Redmine\\wwwroot\\projects.html",
+      "SourceId": "Redmine",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ricsi\\source\\repos\\Redmine2\\Redmine\\wwwroot\\",
+      "BasePath": "_content/Redmine",
+      "RelativePath": "projects.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\projects.html"
+    },
+    {
+      "Identity": "C:\\Users\\Ricsi\\source\\repos\\Redmine2\\Redmine\\wwwroot\\styles.css",
+      "SourceId": "Redmine",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ricsi\\source\\repos\\Redmine2\\Redmine\\wwwroot\\",
+      "BasePath": "_content/Redmine",
+      "RelativePath": "styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\styles.css"
+    }
+  ]
+}
