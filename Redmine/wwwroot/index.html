@@ -4,56 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bejelentkezés</title>
+<link rel="stylesheet" href="stylesIndex.css">
 <style>
-  body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-
-  .login-container {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    background: #f7f7f7;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    text-align: center;
-  }
-
-  input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    border-radius: 4px;
-  }
-
-  button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 4px;
-  }
-
-  button:hover {
-    opacity: 0.8;
-  }
-
-  #feedback {
-      color: red;
-      padding-top: 12px;
-      padding-bottom: 12px;
-  }
-
 </style>
 </head>
 <body>
@@ -71,66 +23,6 @@
     <div id="feedback"></div>
   </form>
 </div>
-
-<script>
-document.getElementById('loginForm').onsubmit = function(event) {
-    event.preventDefault();
-
-    var username = document.getElementsByName('uname')[0].value;
-    var password = document.getElementsByName('psw')[0].value;
-
-    var data = JSON.stringify({
-        Username: username,
-        Password: password
-    });
-
-    fetch('/auth/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: data
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.token && data.managerId) {
-            sessionStorage.setItem('jwt', data.token);
-            sessionStorage.setItem('managerId', data.managerId);
-            
-            establishWebSocketConnection(); 
-
-            window.location.href = data.redirectUrl; 
-        } else {
-            throw new Error('Login failed: Token or manager ID missing');
-        }
-    })
-    .catch(error => {
-        document.getElementById('feedback').textContent = error.message;
-    });
-};
-
-function establishWebSocketConnection() {
-    const socket = new WebSocket('ws://localhost:5000');
-    
-    socket.onopen = function(event) {
-        console.log("WebSocket is open now.");
-    };
-
-    socket.onmessage = function(event) {
-        console.log("WebSocket message received:", event.data);
-    };
-
-    socket.onclose = function(event) {
-        console.log("WebSocket is closed now.");
-    };
-
-    socket.onerror = function(error) {
-        console.log("WebSocket error:", error);
-    };
-
-    window.webSocket = socket;
-}
-</script>
-
+<script src="scriptIndex.js"></script>
 </body>
 </html>

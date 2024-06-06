@@ -1,63 +1,86 @@
 /* General body styling */
 body {
-    font-family: Arial, sans-serif; /* Clean, sans-serif font */
-    background-color: #f4f4f4; /* Light grey background for slight contrast */
-    color: #333; /* Dark grey text for readability */
-    margin: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef; /* Slightly darker grey for better contrast */
+    color: #495057; /* Darker grey for text readability */
+    margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+/* Centering the header at the top */
+header {
+    width: 80%;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Enhanced shadow for depth */
+    margin: 20px 0;
+    border: 2px solid #007bff; /* Border to outline the section */
+    text-align: center;
 }
 
 /* Header styles */
 h1, h2 {
-    color: #5a5a5a; /* Slightly lighter grey for headings */
+    color: #343a40; /* Dark grey for headers */
+    font-weight: 600; /* Bold headers for emphasis */
 }
 
 /* Styling for form and input elements */
-input[type="text"], textarea, select {
-    width: 100%; /* Full width */
-    padding: 10px; /* Comfortable padding inside inputs */
-    margin: 8px 0 16px; /* Spacing around inputs */
+input[type="text"], input[type="password"], input[type="datetime-local"], textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px;
     display: inline-block;
-    border: 1px solid #ccc; /* Subtle borders */
-    border-radius: 4px; /* Rounded corners */
-    box-sizing: border-box; /* Box sizing to include padding in width */
+    border: 1px solid #ced4da; /* Slightly darker border */
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
 }
 
 button {
     width: 100%;
-    padding: 12px 20px;
-    background-color: #4CAF50; /* Green background for actions */
-    color: white; /* White text on buttons */
+    padding: 14px 20px;
+    background-color: #007bff; /* Bootstrap primary blue */
+    color: white;
     border: none;
-    border-radius: 4px; /* Rounded corners */
+    border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 500;
 }
 
 button:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
 /* Container styles for positioning and background */
 div {
-    background-color: white;
-    padding: 20px;
+    background-color: #ffffff;
+    padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-    margin-bottom: 20px; /* Space between sections */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Enhanced shadow for depth */
+    margin-bottom: 20px;
+    width: 80%;
 }
 
 /* List styles */
 ul {
-    list-style-type: none; /* Remove default list styling */
+    list-style-type: none;
     padding: 0;
 }
 
 li {
-    padding: 8px;
-    margin-top: 5px;
-    background-color: #f9f9f9;
-    border-bottom: 1px solid #eee;
+    padding: 12px;
+    margin: 8px 0;
+    background-color: #f8f9fa; /* Light grey background for list items */
+    border-bottom: 1px solid #dee2e6; /* Subtle bottom border */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 li:last-child {
@@ -65,16 +88,40 @@ li:last-child {
 }
 
 li:hover {
-    background-color: #f1f1f1; /* Lighter background on hover */
+    background-color: #e2e6ea; /* Slightly darker on hover */
 }
 
 /* Specific adjustments if needed */
 #projectList li, #taskList li, #managerTasks li {
-    cursor: pointer; /* Indicate items are clickable */
+    cursor: pointer;
 }
 
 /* Alert styles */
 #deadlineAlerts {
-    color: red; /* Make alerts stand out */
+    color: #dc3545; /* Bootstrap danger red for alerts */
     font-weight: bold;
+}
+
+/* Additional styling for feedback messages */
+#feedback {
+    color: #dc3545;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-weight: bold;
+}
+
+/* Header weight */
+h1, h2, label {
+    font-weight: 500;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 1.75rem; /* Slightly larger font size for H2 */
+}
+
+/* Full height styling for body and html */
+body, html {
+    height: 100%;
+    margin: 0;
 }
